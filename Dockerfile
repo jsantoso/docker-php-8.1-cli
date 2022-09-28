@@ -36,7 +36,8 @@ RUN apt-get install -y \
         zip \
         pdftk \
         expect \
-        mkisofs
+        mkisofs \
+        libmagickwand-dev
 
 RUN echo alias ll=\'ls -lF\' >> /root/.bashrc
 
@@ -69,6 +70,9 @@ RUN docker-php-ext-enable redis
 
 RUN pecl install amqp-beta
 RUN docker-php-ext-enable amqp
+
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
 
 ADD conf.d/php.ini /usr/local/etc/php/conf.d/90-php.ini
 
