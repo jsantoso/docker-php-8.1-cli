@@ -37,6 +37,7 @@ RUN apt-get install -y \
         pdftk \
         expect \
         mkisofs \
+        dcmtk \
         libmagickwand-dev
 
 RUN echo alias ll=\'ls -lF\' >> /root/.bashrc
